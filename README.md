@@ -1,22 +1,38 @@
 ###### NOTE: Log files and notes are in markdown format meant for obsidian, but should work with other programs (https://obsidian.md/download)
 
-## TODO (no specific order)
+# PILLARS-LSDyna: Plume-deployed Inflatable for Launch and Landing Abrasive Regolith Shielding
+
+**Project Team:** Caltech PILLARS Team  
+**Advisors:** Dr. Soon-Jo Chung (Caltech), Mr. Kalind Carpenter (JPL)  
+**Lead Researcher (Deployment/Simulation):** James A. Scott III  
+
 ---
-***Debug PILLARS model (never done)
-- [x] add in anchors (constrained nodes)
-	- [ ] more anchors
-- [x] add gravity (1/6 earth)
-- [ ] test off nominal
-	- [ ] to make an off nominal case, move the top part of gas nozzle to blue fabric pid. then delete walls and translate top down. then merge nodes. next pt trim the new area, translate up, and ele gen a new edge drag down to the fabric, then merge nodes again
-	- [ ] get load curve for stress on anchors as a function of off nominal distance
-- [ ] test stress around anchor nodes
-- [ ] make the inner fabric mesh able to stretch so it doesn't constrain geometry of outer mesh
-- [x] add collisions
-- [x] fix fabric mesh
-- [x] add in single_surface_contact so mesh doesnt collide with itself
-- [x] swap simple model for hybrid (or WANG_NEFSKE) model w/ leakage support
-	- [ ] Tweak the leakage support parameters
-- [x] need to find accurate numbers for sim parameters
-- [x] redo anchors more accurately with shells and beams
-	- [x] need to replace solid base with shell closer to fabric or move solid mesh closer and figure out how to refine it
-	- [x] seems like solids can only be refined by editing their geometry file or manually creating the mesh
+
+## Overview
+This repository contains the **LS-DYNA** simulation framework for **PILLARS**, a toroidal membrane structure designed to mitigate lunar regolith ejecta damage during rocket landings. The simulation suite focuses on the structural dynamics of the shield under extreme conditions, including high-velocity plume impingement, thermal stresses, and regolith abrasion.
+
+The project utilizes LS-DYNA's finite element analysis (FEA) capabilities to validate the shield's ability to maintain structural integrity while being hit by supersonic exhaust gases and abrasive particles.
+
+
+---
+
+## Features
+
+* **Fluid-Structure Interaction (FSI):** Simulates the interaction between high-velocity rocket plumes and the flexible Kapton/Kevlar membrane.
+* **Dynamic Deployment:** Models the skeletal bladder inflation sequence used for autonomous autonomous deployment.
+* **Anchor Constraint Support:** Incorporates single-helix anchor node constraints to verify structural stability and stress distribution.
+* **Lunar Environment Modeling:** Simulations configured for 1/6th Earth gravity and ambient lunar vacuum/temperature conditions.
+* **Off-Nominal Case Testing:** Framework for testing "failure states," such as uneven inflation, anchor detachment, or off-center nozzle alignment.
+
+---
+
+## Simulation Architecture
+
+The repository is structured to handle various stages of the FEA workflow:
+
+* **Material Cards:** Custom definitions for Aluminized Kapton and Kevlar composites, including high-temperature performance parameters.
+* **Nozzle Geometry:** Models for SpaceX Starship-class lander exhaust profiles to test plume velocity and temperature gradients.
+* **Python Pre/Post-Processing:** Scripts to automate node merging, mesh refinement, and data extraction from LS-DYNA result files.
+* **Obsidian Documentation:** Detailed technical logs and analysis notes formatted for easy viewing in Markdown.
+
+---
