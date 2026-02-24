@@ -6,10 +6,6 @@
 **Advisors:** Dr. Soon-Jo Chung (Caltech), Mr. Kalind Carpenter (JPL)  
 **Lead Researcher (Deployment/Simulation):** James A. Scott III  
 
-[PILLARS LSIC Poster](pillars-poster.pdf)
-[PILLARS Proposal for NASA BIG Idea Challenge '24](pillars-proposal.pdf)
-[PILLARS Final Report](pillars-final.pdf)
-
 ---
 
 ## Overview
